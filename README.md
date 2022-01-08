@@ -7,3 +7,4 @@ The surface velocity is scaled to represent basal slip, and used to calculate sh
 * INIT_paremeters should be used for user input and run choices. 
 * subGmelt_main runs the model. 
 * FIGURE_distributed returns 2D plots of the model output. Users can choose to show average sliding velocity, average basal shear stress, or basal melt summed over the run period. 
+* Analytical figures creates a figure showing the evolution of basal shear stress and basal melting for a range of sliding velocities. 

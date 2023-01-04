@@ -75,3 +75,17 @@ legend('Weertman','PISM','Zoet & Iverson','Beaud et al.','Location','NorthWest')
 
 grid on
 
+%%
+fgAGU = figure ; 
+plot(u.Ubasemd, Tb.W,'linewidth',2.7 ...
+    ), hold on 
+%plot(u.Ubasemd, Tb.PISM,'linewidth',2)
+%plot(u.Ubasemd, Tb.ZI,'linewidth',2)
+plot(u.Ubasemd, Tb.B,'linewidth',2.5)
+grid on 
+xlabel('Sliding velocity (m day^{-1})')
+ylabel('Basal shear stress (kPa)')
+xlim([0,25])
+
+legend('Weertman','Beaud et al.','Location','NorthWest')
+fontsize(fgAGU,36,"pixels")

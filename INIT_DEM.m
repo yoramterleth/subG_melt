@@ -1,5 +1,4 @@
 %% load DEM information as support for the model
-% this function is partly based on work by W. Van Pelt (https://github.com/wardvp/EBFM-glacier). 
 function [grid] = INIT_DEM(par)
 
 %% load in DEM 

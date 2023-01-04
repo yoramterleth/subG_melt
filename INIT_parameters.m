@@ -3,15 +3,15 @@ function [par,time,OUT,OUTFILE] = INIT_parameters()
 
 %% model runtime and info 
 
-time.ts = datetime('2020-09-01','InputFormat','yyyy-MM-dd');
+time.ts = datetime('2014-09-01','InputFormat','yyyy-MM-dd');
 time.te = datetime('2021-09-01','InputFormat','yyyy-MM-dd');
 
-time.dt = 1.125;                                                            % Timestep (days)
+time.dt = 3.125;                                                            % Timestep (days)
 time.tn = round((datenum(time.te)- ...                                      % Nr. of time-steps
     datenum(time.ts))/time.dt)+1;
 time.dT_UTC = 1; 
 
-par.slip_law = 'WEERTMAN';                                                      % can be 'PISM' or 'ZOET_IVERSON'or 'WEERTMAN' or 'BEAUD'
+par.slip_law = 'WEERTMAN';                                              % can be 'PISM' or 'ZOET_IVERSON'or 'WEERTMAN' or 'BEAUD'
 
 par.outdir = [pwd '\output\'] ; 
 %% DEM (name of file, should be in main folder)
@@ -27,13 +27,15 @@ par.densIce = 917 ;                                                         % [k
 par.LIce = 333.5 * 1000;                                                    % [J kg-1] latent heat of fusion of ice
 
 %% ice velocity 
-par.real_velocities = 0 ;                                                   % real velocities available?
-par.z_max_trunck = 900 ;                                                    % max eleavtion with surging ice: meant to separate out the trunk [m asl]
+par.real_velocities = 1 ;                                                   % real velocities available?
+par.velocity_filename = 'sat_vel_all.mat' ;                                 % file name of velocities 
+
+par.z_max_trunck = 10000 ;                                                    % max eleavtion with surging ice: meant to separate out the trunk [m asl]
 
 par.surge_vel = 30/86400 ;                                                  % surge surf velocities [m.s-1]
 par.quiesc_vel = 3/86400 ;                                                  % quiescence velocities [m.s-1]
 
-par.u_slip_prop = .95 ;                                                     % proportion of surface velocity explained by basal slip 
+par.u_slip_prop = 1 ;                                                       % proportion of surface velocity explained by basal slip 
 
 %% till/basal properties 
 par.c0 = 0 ;                                                                % till cohesion:  0 in van pelt 2012

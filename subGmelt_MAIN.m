@@ -10,14 +10,14 @@ clearvars
 %% INITIALISATION 
 [par,time,OUT,OUTFILE] = INIT_parameters();
 [grid] = INIT_DEM(par);
-
+[measured_velocities] = INIT_velocities(time, par); 
 
 %% Dynamic component 
 for t=1:time.tn
 
 [time] = TIME_print_time(t,time);
     
-[u] = TIME_velocity(par,grid,t) ;
+[u] = TIME_velocity(par,grid,t,measured_velocities) ;
 
 [Tb] = TIME_shear_stress(par,u,t) ; 
 

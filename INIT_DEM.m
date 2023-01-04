@@ -7,10 +7,10 @@ function [grid] = INIT_DEM(par)
 input = load(par.DEMname) ; 
 
 
-grid.x_2D = input.TG.x;
-grid.y_2D = input.TG.y;
-grid.z_2D = input.TG.z;
-grid.utmzone = input.UTM_zone ; 
+grid.x_2D = input.SKdem.x;
+grid.y_2D = input.SKdem.y;
+grid.z_2D = input.SKdem.z;
+grid.utmzone = input.SKdem.UTM_zone ; 
 
 grid.Lx = size(grid.x_2D,1);
 grid.Ly = size(grid.y_2D,2);

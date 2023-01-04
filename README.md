@@ -6,6 +6,7 @@ The surface velocity is scaled to represent basal slip, and used to calculate sh
 
 * INIT_parameters should be used for user input and run choices. 
 * The sat_vel_all.mat file contains surface velocity records for Sit Kusa. Another option is to use synthetic velocities by turning "real_velocities" off in the parameter file. 
+* The sat_vel_all.mat file contains elevation data for the northern tributary of Sit Kusa. The data is cropped from ArcticDEM. 
 * subGmelt_main runs the model. 
 * FIGURE_distributed returns 2D plots of the model output. Users can choose to show average sliding velocity, average basal shear stress, or basal melt summed over the run period. 
 * FIGURE_time returns a time series of the model output. Users can choose to show average sliding velocity, average basal shear stress, or basal melt. 
